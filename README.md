@@ -20,6 +20,9 @@ def say_hello(name_string: str):
       
     If the user's name is "Oliver", then the function should return "Hello, Oliver!"
 
+    Usage:
+    user_float = get_float(Please privide a number)
+    
     Arguments: 
         - name_string: A string containing the user's name
       

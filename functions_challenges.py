@@ -5,13 +5,12 @@ def get_float(prompt_string: str):
     """A function that gets a float from the user and returns it.
 
     Arguments:
-        - prompt_string: A string that will be shown to the user when they are
-          prompted to input the number.
+        - prompt_string: A string that will be shown to the user when they are prompted to input the number.
 
     Returns:
         - A float converted from the user's input
     """
-    pass
+    return float(input(prompt_string))
 
 
 #############################################################################################################
@@ -21,13 +20,16 @@ def get_float(prompt_string: str):
 def miles_to_km(distance_in_miles: float):
     """A function to convert distance from miles to km
 
+    Usage:
+        distance_in_km = distance_to_miles(2)
+
     Arguments:
         - distance_in_miles: A float representing a distance in miles
 
     Returns
         - a float representing the distance in kilometers
     """
-    pass
+    return distance_in_miles * 1.60934
 
 
 #############################################################################################################
@@ -37,6 +39,12 @@ def relay_distance(distance_per_runner: float, number_of_runners: float):
     """A function to calculate the total distance run by a team of runners
     in a relay race.
 
+    Let's say we have a team of 4 runners, each run 50m
+    Runner 1 50m 50m
+    Runner 2 50m 100m
+    Runner 3 50m 150m
+    Runner 4 50m 200m
+
     Arguments:
         - distance_per_runner: a float representing the amount each runner runs
             (in a relay race, all runners run the same distance!)
@@ -45,7 +53,7 @@ def relay_distance(distance_per_runner: float, number_of_runners: float):
     Returns:
         - A float representing the total distance run.
     """
-    pass
+    return distance_per_runner * number_of_runners
 
 
 #############################################################################################################
@@ -63,4 +71,7 @@ def relay_distance_input():
     Returns:
         - A float representing the total distance run.
     """
-    pass
+    runners = get_float("Enter number of runners: ")
+    distance_miles = get_float("Enter the distance each runner has run (in miles): ")
+    distance_kms = miles_to_km(distance_miles)
+    return relay_distance(distance_kms, runners)
